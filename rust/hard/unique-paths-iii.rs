@@ -50,9 +50,8 @@ impl Solution {
         let mut visited: HashSet<(i32, i32)> = HashSet::new();
         visited.insert(starting_point);
         let mut q: VecDeque<Node> = VecDeque::new();
-        let neighbors = Neighbors(starting_point, &grid);
         let mut sol = 0;
-        for ne in neighbors {
+        for ne in Neighbors(starting_point, &grid) {
             let n = Node::new(ne, visited.clone());
             q.push_back(n);
         }
