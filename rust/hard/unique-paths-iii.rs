@@ -52,8 +52,7 @@ impl Solution {
         let mut q: VecDeque<Node> = VecDeque::new();
         let mut sol = 0;
         for ne in Neighbors(starting_point, &grid) {
-            let n = Node::new(ne, visited.clone());
-            q.push_back(n);
+            q.push_back(Node::new(ne, visited.clone()));
         }
         while !q.is_empty() {
             if let Some(mut current_node) = q.pop_front() {
